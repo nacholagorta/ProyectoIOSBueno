@@ -14,6 +14,7 @@
 		DDA3AF4D207398830095FB55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA3AF4B207398830095FB55 /* LaunchScreen.storyboard */; };
 		DDA3AF58207398830095FB55 /* PrimerProyectoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3AF57207398830095FB55 /* PrimerProyectoTests.swift */; };
 		DDA3AF63207398830095FB55 /* PrimerProyectoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3AF62207398830095FB55 /* PrimerProyectoUITests.swift */; };
+		DDA3AF712073ACDA0095FB55 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3AF702073ACDA0095FB55 /* VCRegister.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DDA3AF5E207398830095FB55 /* PrimerProyectoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimerProyectoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA3AF62207398830095FB55 /* PrimerProyectoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimerProyectoUITests.swift; sourceTree = "<group>"; };
 		DDA3AF64207398830095FB55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA3AF702073ACDA0095FB55 /* VCRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				DDA3AF49207398830095FB55 /* Assets.xcassets */,
 				DDA3AF4B207398830095FB55 /* LaunchScreen.storyboard */,
 				DDA3AF4E207398830095FB55 /* Info.plist */,
+				DDA3AF702073ACDA0095FB55 /* VCRegister.swift */,
 			);
 			path = PrimerProyecto;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA3AF45207398830095FB55 /* ViewController.swift in Sources */,
+				DDA3AF712073ACDA0095FB55 /* VCRegister.swift in Sources */,
 				DDA3AF43207398830095FB55 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

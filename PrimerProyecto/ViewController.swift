@@ -10,8 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var  txtUser:UITextField?
+    @IBOutlet var  txtPass:UITextField?
+    @IBOutlet var  btnLogin:UIButton?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -20,6 +26,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func eventoClickLogin(){
+        print("Bienvenido " + (txtUser?.text)!)
+        
+        if txtUser?.text == "Nacho" && txtPass?.text == ":DDD"{
+            self.performSegue(withIdentifier: "trlogin", sender: self)
+        }
+        
+    }
 
 }
 

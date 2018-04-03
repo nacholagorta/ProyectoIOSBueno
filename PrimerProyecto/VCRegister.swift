@@ -10,6 +10,10 @@ import UIKit
 
 class VCRegister: UIViewController {
 
+    
+    @IBOutlet var  btnAceptar:UIButton?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
