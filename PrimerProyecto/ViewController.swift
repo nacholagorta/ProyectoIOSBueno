@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     @IBAction func eventoClickLogin(){
         print("Bienvenido " + (txtUser?.text)!)
         
-        if txtUser?.text == "Nacho" && txtPass?.text == ":DDD"{
+        if txtUser?.text == "Nacho" && txtPass?.text == "1234"{
             self.performSegue(withIdentifier: "trlogin", sender: self)
         }
         

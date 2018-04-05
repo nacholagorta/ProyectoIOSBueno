@@ -1,40 +1,39 @@
 //
-//  VCPrincipal.swift
+//  VCCollectionViewController.swift
 //  PrimerProyecto
 //
-//  Created by IGNACIO OLAGORTA VERA on 4/4/18.
+//  Created by IGNACIO OLAGORTA VERA on 5/4/18.
 //  Copyright © 2018 IGNACIO OLAGORTA VERA. All rights reserved.
 //
 
 import UIKit
 
-class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
-  
+class VCCollectionViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     
     
-    @IBOutlet var tbtablaCampeones:UITableView?
-
+    
+    
+    @IBOutlet var colPrincipal:UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
-        // Do any additional setup after loading the view.
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let celda = tableView.dequeueReusableCell(withIdentifier: "idmicelda") as! MiCelda1
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let celda = collectionView.dequeueReusableCell(withReuseIdentifier: "idmicelda2", for: indexPath) as! MiCelda2
         
         if indexPath.row == 0 {
-             celda.lblNombre?.text="LeeSin"
+            celda.lblNombre?.text="LeeSin"
         }
         else if indexPath.row == 1 {
             celda.lblNombre?.text="Yasuo"
@@ -48,11 +47,11 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
         else if indexPath.row == 4 {
             celda.lblNombre?.text="Brand"
         }
-       
+        
         return celda
     }
     
-    
+
     /*
     // MARK: - Navigation
 

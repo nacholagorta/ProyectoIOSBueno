@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0479A020764088005F3168 /* MiCelda1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04799F20764088005F3168 /* MiCelda1.swift */; };
+		DD0479A2207647F6005F3168 /* VCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0479A1207647F6005F3168 /* VCCollectionViewController.swift */; };
+		DD0479A820765014005F3168 /* MiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0479A720765014005F3168 /* MiCelda2.swift */; };
 		DD85773A207523B500F72713 /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD857739207523B500F72713 /* VCPrincipal.swift */; };
 		DDA3AF43207398830095FB55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3AF42207398830095FB55 /* AppDelegate.swift */; };
 		DDA3AF45207398830095FB55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3AF44207398830095FB55 /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD04799F20764088005F3168 /* MiCelda1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCelda1.swift; sourceTree = "<group>"; };
+		DD0479A1207647F6005F3168 /* VCCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCollectionViewController.swift; sourceTree = "<group>"; };
+		DD0479A720765014005F3168 /* MiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCelda2.swift; sourceTree = "<group>"; };
 		DD857739207523B500F72713 /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
 		DDA3AF3F207398830095FB55 /* PrimerProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimerProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA3AF42207398830095FB55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 				DDA3AF4E207398830095FB55 /* Info.plist */,
 				DDA3AF702073ACDA0095FB55 /* VCRegister.swift */,
 				DD857739207523B500F72713 /* VCPrincipal.swift */,
+				DD04799F20764088005F3168 /* MiCelda1.swift */,
+				DD0479A1207647F6005F3168 /* VCCollectionViewController.swift */,
+				DD0479A720765014005F3168 /* MiCelda2.swift */,
 			);
 			path = PrimerProyecto;
 			sourceTree = "<group>";
@@ -265,9 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0479A820765014005F3168 /* MiCelda2.swift in Sources */,
+				DD0479A2207647F6005F3168 /* VCCollectionViewController.swift in Sources */,
 				DDA3AF45207398830095FB55 /* ViewController.swift in Sources */,
 				DDA3AF712073ACDA0095FB55 /* VCRegister.swift in Sources */,
 				DDA3AF43207398830095FB55 /* AppDelegate.swift in Sources */,
+				DD0479A020764088005F3168 /* MiCelda1.swift in Sources */,
 				DD85773A207523B500F72713 /* VCPrincipal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
