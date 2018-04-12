@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class VCRegister: UIViewController {
 
     
     @IBOutlet var  btnAceptar:UIButton?
-    
-    
+    @IBOutlet var txtUser:UITextField?
+    @IBOutlet var txtPass:UITextField?
+    @IBOutlet var txtEmail:UITextField?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,23 @@ class VCRegister: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func clickRegistrar(){
+        Auth.auth().createUser(withEmail: (txtUser?.text)!, password: (txtPass?.text)!) { (user, error) in
+            if user != nil{
+                print("TE REGISTRASTES")
+               self.performSegue(withIdentifier: "trregister", sender: self)
+                DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!).setData([
+                    "Nombre": self.txtUser?.text as Any,
+                    "Contraseña": self.txtPass?.text as Any,
+                    "Email": self.txtEmail?.text as Any,
+                    ])
+            }
+            else{
+                print(error!)
+            }
+        }
+        
     }
     
 
