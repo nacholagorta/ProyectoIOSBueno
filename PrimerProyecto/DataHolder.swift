@@ -16,6 +16,8 @@ class DataHolder: NSObject {
     
     var fireStoreDB:Firestore?
     
+    var miPerfil:Perfil = Perfil()
+    
     func initFireBase() {
         FirebaseApp.configure()
         fireStoreDB = Firestore.firestore()

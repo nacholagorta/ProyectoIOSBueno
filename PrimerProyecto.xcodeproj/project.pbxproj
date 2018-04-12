@@ -10,6 +10,7 @@
 		19F180D63083D7133A2C26B3 /* Pods_PrimerProyectoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFA236C1A93B0196C840298 /* Pods_PrimerProyectoTests.framework */; };
 		5AFAF3728FAC9A0B0F37774C /* Pods_PrimerProyecto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0487763DEB9215E635513E75 /* Pods_PrimerProyecto.framework */; };
 		C6D3B03C7F5B3053297994AB /* Pods_PrimerProyectoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F1F0B899504755E6E9D661 /* Pods_PrimerProyectoUITests.framework */; };
+		DD00D22A207F892E0044F54C /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00D229207F892E0044F54C /* Perfil.swift */; };
 		DD0479A020764088005F3168 /* MiCelda1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04799F20764088005F3168 /* MiCelda1.swift */; };
 		DD0479A2207647F6005F3168 /* VCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0479A1207647F6005F3168 /* VCCollectionViewController.swift */; };
 		DD0479A820765014005F3168 /* MiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0479A720765014005F3168 /* MiCelda2.swift */; };
@@ -53,6 +54,7 @@
 		9D6146126A39B51F5E827E26 /* Pods-PrimerProyecto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerProyecto.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimerProyecto/Pods-PrimerProyecto.release.xcconfig"; sourceTree = "<group>"; };
 		B53C936FF8AAF6EEF2134D10 /* Pods-PrimerProyectoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerProyectoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimerProyectoUITests/Pods-PrimerProyectoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6F1F0B899504755E6E9D661 /* Pods_PrimerProyectoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimerProyectoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD00D229207F892E0044F54C /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		DD04799F20764088005F3168 /* MiCelda1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCelda1.swift; sourceTree = "<group>"; };
 		DD0479A1207647F6005F3168 /* VCCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCollectionViewController.swift; sourceTree = "<group>"; };
 		DD0479A720765014005F3168 /* MiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCelda2.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				DD0479A1207647F6005F3168 /* VCCollectionViewController.swift */,
 				DD0479A720765014005F3168 /* MiCelda2.swift */,
 				DD65878F207CE1AF0087E9A4 /* DataHolder.swift */,
+				DD00D229207F892E0044F54C /* Perfil.swift */,
 			);
 			path = PrimerProyecto;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				DD0479A820765014005F3168 /* MiCelda2.swift in Sources */,
 				DD0479A2207647F6005F3168 /* VCCollectionViewController.swift in Sources */,
 				DDA3AF45207398830095FB55 /* ViewController.swift in Sources */,
+				DD00D22A207F892E0044F54C /* Perfil.swift in Sources */,
 				DD658790207CE1AF0087E9A4 /* DataHolder.swift in Sources */,
 				DDA3AF712073ACDA0095FB55 /* VCRegister.swift in Sources */,
 				DDA3AF43207398830095FB55 /* AppDelegate.swift in Sources */,
