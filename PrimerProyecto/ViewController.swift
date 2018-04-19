@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         txtUser?.text = DataHolder.sharedInstance.sNick
-        DataHolder.sharedInstance.sNick = "1234"
+        DataHolder.sharedInstance.sNick = "123456"
         txtPass?.text = DataHolder.sharedInstance.sNick
         
     

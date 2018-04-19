@@ -12,7 +12,7 @@ import Firebase
 class DataHolder: NSObject {
     static let sharedInstance:DataHolder = DataHolder()
     
-    var sNick:String = "Nacho"
+    var sNick:String = "QWERTY@gmail.com"
     
     var fireStoreDB:Firestore?
     

@@ -7,16 +7,34 @@
 //
 
 import UIKit
-
+import Firebase
 class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
   
     
     
     @IBOutlet var tbtablaCampeones:UITableView?
-
+    var arCiudades:[City] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataHolder.sharedInstance.fireStoreDB?.collection("cities").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let ciudad:City = City()
+                        ciudad.sID = document.documentID
+                        ciudad.setMap(valores: document.data())
+                        self.arCiudades.append(ciudad)
+                        
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                    print("---->>>>> ",self.arCiudades.count)
+                     self.tbtablaCampeones?.reloadData()
+                }
+           
+        }
     }
         // Do any additional setup after loading the view.
 
@@ -26,13 +44,16 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR", self.arCiudades.count)
+        return self.arCiudades.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let celda = tableView.dequeueReusableCell(withIdentifier: "idmicelda") as! MiCelda1
+        celda.lblNombre?.text = self.arCiudades[indexPath.row].sName
         
+        /*
         if indexPath.row == 0 {
              celda.lblNombre?.text="LeeSin"
         }
@@ -48,10 +69,10 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
         else if indexPath.row == 4 {
             celda.lblNombre?.text="Brand"
         }
-       
+       */
         return celda
     }
-    
+ 
     
     /*
     // MARK: - Navigation

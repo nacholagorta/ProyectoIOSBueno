@@ -239,7 +239,7 @@
         <!--Mapa-->
         <scene sceneID="tFP-F5-Se5">
             <objects>
-                <viewController id="6tb-vh-bU9" sceneMemberID="viewController">
+                <viewController id="6tb-vh-bU9" customClass="VCMapa" customModule="PrimerProyecto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CR9-1I-ymW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,6 +253,9 @@
                         <viewLayoutGuide key="safeArea" id="MU3-6N-g6p"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" id="ldr-wK-gj6"/>
+                    <connections>
+                        <outlet property="miMapa" destination="5zr-QV-O51" id="J00-F2-dCj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5b-4U-6ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

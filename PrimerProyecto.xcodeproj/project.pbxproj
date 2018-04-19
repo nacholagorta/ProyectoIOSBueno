@@ -14,6 +14,8 @@
 		DD0479A020764088005F3168 /* MiCelda1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04799F20764088005F3168 /* MiCelda1.swift */; };
 		DD0479A2207647F6005F3168 /* VCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0479A1207647F6005F3168 /* VCCollectionViewController.swift */; };
 		DD0479A820765014005F3168 /* MiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0479A720765014005F3168 /* MiCelda2.swift */; };
+		DD2780B12088957B001B7A9D /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2780B02088957B001B7A9D /* VCMapa.swift */; };
+		DD605E6D2088B531005D24CD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD605E6C2088B531005D24CD /* City.swift */; };
 		DD65878E207CDBC60087E9A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD65878D207CDBC60087E9A4 /* GoogleService-Info.plist */; };
 		DD658790207CE1AF0087E9A4 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65878F207CE1AF0087E9A4 /* DataHolder.swift */; };
 		DD85773A207523B500F72713 /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD857739207523B500F72713 /* VCPrincipal.swift */; };
@@ -58,6 +60,8 @@
 		DD04799F20764088005F3168 /* MiCelda1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCelda1.swift; sourceTree = "<group>"; };
 		DD0479A1207647F6005F3168 /* VCCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCollectionViewController.swift; sourceTree = "<group>"; };
 		DD0479A720765014005F3168 /* MiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCelda2.swift; sourceTree = "<group>"; };
+		DD2780B02088957B001B7A9D /* VCMapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
+		DD605E6C2088B531005D24CD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		DD65878D207CDBC60087E9A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD65878F207CE1AF0087E9A4 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
 		DD857739207523B500F72713 /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				DD0479A720765014005F3168 /* MiCelda2.swift */,
 				DD65878F207CE1AF0087E9A4 /* DataHolder.swift */,
 				DD00D229207F892E0044F54C /* Perfil.swift */,
+				DD2780B02088957B001B7A9D /* VCMapa.swift */,
+				DD605E6C2088B531005D24CD /* City.swift */,
 			);
 			path = PrimerProyecto;
 			sourceTree = "<group>";
@@ -502,11 +508,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD0479A820765014005F3168 /* MiCelda2.swift in Sources */,
+				DD2780B12088957B001B7A9D /* VCMapa.swift in Sources */,
 				DD0479A2207647F6005F3168 /* VCCollectionViewController.swift in Sources */,
 				DDA3AF45207398830095FB55 /* ViewController.swift in Sources */,
 				DD00D22A207F892E0044F54C /* Perfil.swift in Sources */,
 				DD658790207CE1AF0087E9A4 /* DataHolder.swift in Sources */,
 				DDA3AF712073ACDA0095FB55 /* VCRegister.swift in Sources */,
+				DD605E6D2088B531005D24CD /* City.swift in Sources */,
 				DDA3AF43207398830095FB55 /* AppDelegate.swift in Sources */,
 				DD0479A020764088005F3168 /* MiCelda1.swift in Sources */,
 				DD85773A207523B500F72713 /* VCPrincipal.swift in Sources */,
