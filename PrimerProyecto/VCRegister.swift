@@ -27,9 +27,9 @@ class VCRegister: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func clickRegistrar(){
-        DataHolder.sharedInstance.miPerfil.sNombre = "Yony"
-        DataHolder.sharedInstance.miPerfil.sApellidos = "BM"
-        DataHolder.sharedInstance.miPerfil.iFecha = 1600
+        DataHolder.sharedInstance.miPerfil.sNombre = txtUser?.text
+        DataHolder.sharedInstance.miPerfil.sApellidos = txtEmail?.text
+        DataHolder.sharedInstance.miPerfil.iFecha = 1900
         
         Auth.auth().createUser(withEmail: (txtUser?.text)!, password: (txtPass?.text)!) { (user, error) in
             if user != nil{
