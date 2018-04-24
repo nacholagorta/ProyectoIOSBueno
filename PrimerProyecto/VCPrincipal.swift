@@ -56,7 +56,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let celda = tableView.dequeueReusableCell(withIdentifier: "idmicelda") as! MiCelda1
         celda.lblNombre?.text = self.arUsuarios[indexPath.row].sNombre
         celda.lblPais?.text = self.arUsuarios[indexPath.row].sApellidos
-       
+        celda.mostrarImagen(uri: self.arUsuarios[indexPath.row].sUrlImage!)
         /*
         if indexPath.row == 0 {
              celda.lblNombre?.text="LeeSin"

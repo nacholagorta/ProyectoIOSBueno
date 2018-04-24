@@ -15,6 +15,7 @@ class City: NSObject {
     let IDNAME = "name"
     let IDPOPULATION = "population"
     let IDSTATE = "state"
+    let IDURLINMAGE = "url_image"
     
     var sID:String?
     var sCapital:String?
@@ -22,7 +23,7 @@ class City: NSObject {
     var sName:String?
     var iPop:Int?
     var sState:String?
-    
+    var sUrlImage:String?
     
     func setMap(valores:[String:Any]) {
         sCapital = valores [IDCAPITAL] as? String
@@ -30,7 +31,11 @@ class City: NSObject {
         sName = valores [IDNAME] as? String
         iPop = valores[IDPOPULATION] as? Int
         sState = valores [IDSTATE] as? String
+        sUrlImage = valores [IDURLINMAGE] as? String
         
+        if sUrlImage == nil{
+            sUrlImage="gs://primerproyecto-79dc7.appspot.com/perros/perro4.jpg"
+        }
     }
     
     
@@ -40,7 +45,8 @@ class City: NSObject {
             IDCOUNTRY: sCountry as Any,
             IDNAME: sName as Any,
             IDPOPULATION: iPop as Any,
-            IDSTATE: sState as Any
+            IDSTATE: sState as Any,
+            IDURLINMAGE: sUrlImage as Any
         ]
     }
 }
