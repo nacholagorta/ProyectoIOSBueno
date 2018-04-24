@@ -17,8 +17,8 @@ class Perfil: NSObject {
     var sNombre:String?
     var iFecha:Int?
     var sApellidos:String?
-    var fLon:Float?
-    var fLat:Float?
+    var iLatitude:Double?
+    var iLongitude:Double?
     
     
     func setMap(valores:[String:Any]) {
@@ -26,8 +26,8 @@ class Perfil: NSObject {
         sApellidos = valores ["apellido"] as? String
         iFecha = valores ["fecha de nacimiento"] as? Int
         sUrlImage = valores ["image"] as? String
-        fLat = valores ["latitud"] as? Float
-        fLon = valores ["longitud"] as? Float
+        iLatitude = valores ["latitud"] as? Double
+        iLongitude = valores ["longitud"] as? Double
         //if sUrlImage == nil{
           //  sUrlImage="gs://primerproyecto-79dc7.appspot.com/perros/perro4.jpg"
         //}
@@ -39,7 +39,9 @@ class Perfil: NSObject {
             "nombre": sNombre as Any,
             "apellido": sApellidos as Any,
             "fecha de nacimiento": iFecha as Any,
-            "image": sUrlImage as Any]
+            "image": sUrlImage as Any,
+            "latitud": iLatitude as Any,
+            "nacimiento": iLongitude as Any]
         
     }
 }
