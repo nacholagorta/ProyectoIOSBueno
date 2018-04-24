@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class DataHolder: NSObject {
     static let sharedInstance:DataHolder = DataHolder()
@@ -15,14 +16,14 @@ class DataHolder: NSObject {
     var sNick:String = "QWERTY@gmail.com"
     
     var fireStoreDB:Firestore?
-    
+    var firStorage:Storage?
     var miPerfil:Perfil = Perfil()
     
     func initFireBase() {
         FirebaseApp.configure()
         fireStoreDB = Firestore.firestore()
-   
-        let citiesRef = fireStoreDB?.collection("cities")
+   firStorage = Storage.storage()
+       /* let citiesRef = fireStoreDB?.collection("cities")
         
         citiesRef?.document("SF").setData([
             "name": "San Francisco",
@@ -55,6 +56,6 @@ class DataHolder: NSObject {
             "country": "China",
             "capital": true,
             "population": 21500000
-            ])
+            ])*/
 }
  }

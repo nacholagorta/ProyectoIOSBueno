@@ -11,7 +11,8 @@ import UIKit
 class MiCelda1: UITableViewCell {
     
     @IBOutlet var lblNombre:UILabel?
-
+    @IBOutlet var lblPais:UILabel?
+    @IBOutlet var imvImage:UIImageView?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

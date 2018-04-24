@@ -13,25 +13,26 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
     @IBOutlet var tbtablaCampeones:UITableView?
-    var arCiudades:[City] = []
+    var arUsuarios:[Perfil] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataHolder.sharedInstance.fireStoreDB?.collection("cities").getDocuments() { (querySnapshot, err) in
+        DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").addSnapshotListener { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
+                    self.arUsuarios=[]
                     for document in querySnapshot!.documents {
-                        let ciudad:City = City()
-                        ciudad.sID = document.documentID
-                        ciudad.setMap(valores: document.data())
-                        self.arCiudades.append(ciudad)
+                        let nombre:Perfil = Perfil()
+                        nombre.setMap(valores: document.data())
+                        self.arUsuarios.append(nombre)
                         
-                        print("\(document.documentID) => \(document.data())")
+                        //print("\(document.documentID) => \(document.data())")
                     }
-                    print("---->>>>> ",self.arCiudades.count)
-                     self.tbtablaCampeones?.reloadData()
+                    //print("---->>>>> ",self.arUsuarios.count)
+                    //self.tbtablaCampeones?.reloadData()
+                    self.refreshUI()
                 }
            
         }
@@ -44,15 +45,18 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR", self.arCiudades.count)
-        return self.arCiudades.count
+        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR", self.arUsuarios.count)
+        return self.arUsuarios.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let celda = tableView.dequeueReusableCell(withIdentifier: "idmicelda") as! MiCelda1
-        celda.lblNombre?.text = self.arCiudades[indexPath.row].sName
         
+        
+        let celda = tableView.dequeueReusableCell(withIdentifier: "idmicelda") as! MiCelda1
+        celda.lblNombre?.text = self.arUsuarios[indexPath.row].sNombre
+        celda.lblPais?.text = self.arUsuarios[indexPath.row].sApellidos
+       
         /*
         if indexPath.row == 0 {
              celda.lblNombre?.text="LeeSin"
@@ -73,7 +77,12 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return celda
     }
  
-    
+    func refreshUI(){
+        
+        DispatchQueue.main.async(execute: {
+            self.tbtablaCampeones?.reloadData()
+        })
+    }
     /*
     // MARK: - Navigation
 

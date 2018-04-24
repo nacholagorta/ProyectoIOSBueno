@@ -11,13 +11,30 @@ import UIKit
 class VCCollectionViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     
     
-    
+      var arUsuarios:[Perfil] = []
     
     @IBOutlet var colPrincipal:UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").addSnapshotListener { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                self.arUsuarios=[]
+                for document in querySnapshot!.documents {
+                    let nombre:Perfil = Perfil()
+                    nombre.setMap(valores: document.data())
+                    self.arUsuarios.append(nombre)
+                    
+                    //print("\(document.documentID) => \(document.data())")
+                }
+                //print("---->>>>> ",self.arUsuarios.count)
+                //self.tbtablaCampeones?.reloadData()
+                self.refreshUI()
+            }
+            
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -26,12 +43,15 @@ class VCCollectionViewController: UIViewController, UICollectionViewDelegate,UIC
         // Dispose of any resources that can be recreated.
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.arUsuarios.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celda = collectionView.dequeueReusableCell(withReuseIdentifier: "idmicelda2", for: indexPath) as! MiCelda2
+        celda.lblNombre?.text = self.arUsuarios[indexPath.row].sNombre
+        //celda.imgvMain?.image = self.arUsuarios[indexPath.row].
         
+        /*
         if indexPath.row == 0 {
             celda.lblNombre?.text="LeeSin"
         }
@@ -47,11 +67,16 @@ class VCCollectionViewController: UIViewController, UICollectionViewDelegate,UIC
         else if indexPath.row == 4 {
             celda.lblNombre?.text="Brand"
         }
-        
+        */
         return celda
     }
     
-
+    func refreshUI(){
+        
+        DispatchQueue.main.async(execute: {
+            self.colPrincipal?.reloadData()
+        })
+    }
     /*
     // MARK: - Navigation
 

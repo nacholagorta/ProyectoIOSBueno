@@ -10,14 +10,17 @@ import UIKit
 import Firebase
 
 class Perfil: NSObject {
+    
 
+    
+    
     var sNombre:String?
     var iFecha:Int?
     var sApellidos:String?
     
     func setMap(valores:[String:Any]) {
         sNombre = valores ["nombre"] as? String
-        sApellidos = valores ["apellidos"] as? String
+        sApellidos = valores ["apellido"] as? String
         iFecha = valores ["fecha de nacimiento"] as? Int
         
     }

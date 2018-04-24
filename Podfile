@@ -10,6 +10,7 @@ target 'PrimerProyecto' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   
   target 'PrimerProyectoTests' do
     inherit! :search_paths
