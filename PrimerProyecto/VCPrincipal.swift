@@ -8,34 +8,18 @@
 
 import UIKit
 import Firebase
-class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource, DataHolderDelegate {
   
     
     
     @IBOutlet var tbtablaCampeones:UITableView?
-    var arUsuarios:[Perfil] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        DataHolder.sharedInstance.descargarPerfiles(delegate:self)
         
-        DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").addSnapshotListener { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    self.arUsuarios=[]
-                    for document in querySnapshot!.documents {
-                        let nombre:Perfil = Perfil()
-                        nombre.setMap(valores: document.data())
-                        self.arUsuarios.append(nombre)
-                        
-                        //print("\(document.documentID) => \(document.data())")
-                    }
-                    //print("---->>>>> ",self.arUsuarios.count)
-                    //self.tbtablaCampeones?.reloadData()
-                    self.refreshUI()
-                }
-           
-        }
     }
         // Do any additional setup after loading the view.
 
@@ -44,9 +28,15 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    func DHDDescargaPerfilesCompleta(blFin: Bool) {
+        if blFin {
+            self.refreshUI()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR", self.arUsuarios.count)
-        return self.arUsuarios.count
+        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR", DataHolder.sharedInstance.arUsuarios.count)
+        return DataHolder.sharedInstance.arUsuarios.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,9 +44,9 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         
         let celda = tableView.dequeueReusableCell(withIdentifier: "idmicelda") as! MiCelda1
-        celda.lblNombre?.text = self.arUsuarios[indexPath.row].sNombre
-        celda.lblPais?.text = self.arUsuarios[indexPath.row].sApellidos
-        celda.mostrarImagen(uri: self.arUsuarios[indexPath.row].sUrlImage!)
+        celda.lblNombre?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sNombre
+        celda.lblPais?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sApellidos
+        celda.mostrarImagen(uri: DataHolder.sharedInstance.arUsuarios[indexPath.row].sUrlImage!)
         /*
         if indexPath.row == 0 {
              celda.lblNombre?.text="LeeSin"

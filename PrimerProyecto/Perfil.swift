@@ -41,7 +41,7 @@ class Perfil: NSObject {
             "fecha de nacimiento": iFecha as Any,
             "image": sUrlImage as Any,
             "latitud": iLatitude as Any,
-            "nacimiento": iLongitude as Any]
+            "longitud": iLongitude as Any]
         
     }
 }

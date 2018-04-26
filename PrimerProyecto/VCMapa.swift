@@ -10,13 +10,15 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class VCMapa: UIViewController, CLLocationManagerDelegate {
+class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate {
 
     @IBOutlet var miMapa:MKMapView?
     var locationManager:CLLocationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataHolder.sharedInstance.descargarPerfiles(delegate: self)
+        
         for Perfil in DataHolder.sharedInstance.arUsuarios {
             if Perfil.iLatitude != nil {
                 self.agregarPin(titulo: Perfil.sNombre!, latitude: Perfil.iLatitude!, longitude: Perfil.iLongitude!)
@@ -30,7 +32,16 @@ class VCMapa: UIViewController, CLLocationManagerDelegate {
         miMapa?.showsUserLocation = true
         // Do any additional setup after loading the view.
     }
-
+    
+    func DHDDescargaPerfilesCompleta(blFin: Bool) {
+        if blFin {
+            self.agregarPines()
+        }
+    }
+    
+    func agregarPines(){
+        print("Agregando Pines!!!")
+    }
  
     
     override func didReceiveMemoryWarning() {
