@@ -46,24 +46,9 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource, D
         let celda = tableView.dequeueReusableCell(withIdentifier: "idmicelda") as! MiCelda1
         celda.lblNombre?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sNombre
         celda.lblPais?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sApellidos
+        if (DataHolder.sharedInstance.arUsuarios[indexPath.row].sUrlImage != nil){
         celda.mostrarImagen(uri: DataHolder.sharedInstance.arUsuarios[indexPath.row].sUrlImage!)
-        /*
-        if indexPath.row == 0 {
-             celda.lblNombre?.text="LeeSin"
         }
-        else if indexPath.row == 1 {
-            celda.lblNombre?.text="Yasuo"
-        }
-        else if indexPath.row == 2{
-            celda.lblNombre?.text="Riven"
-        }
-        else if indexPath.row == 3 {
-            celda.lblNombre?.text="Kayn"
-        }
-        else if indexPath.row == 4 {
-            celda.lblNombre?.text="Brand"
-        }
-       */
         return celda
     }
  

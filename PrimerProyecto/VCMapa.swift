@@ -18,7 +18,6 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         DataHolder.sharedInstance.descargarPerfiles(delegate: self)
-        
         for Perfil in DataHolder.sharedInstance.arUsuarios {
             if Perfil.iLatitude != nil {
                 self.agregarPin(titulo: Perfil.sNombre!, latitude: Perfil.iLatitude!, longitude: Perfil.iLongitude!)

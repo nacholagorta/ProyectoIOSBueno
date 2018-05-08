@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class VCRegister: UIViewController {
+class VCRegister: UIViewController, DataHolderDelegate {
 
     
     @IBOutlet var  btnAceptar:UIButton?
@@ -30,34 +30,13 @@ class VCRegister: UIViewController {
         DataHolder.sharedInstance.miPerfil.sNombre = txtUser?.text
         DataHolder.sharedInstance.miPerfil.sApellidos = txtEmail?.text
         DataHolder.sharedInstance.miPerfil.iFecha = 1900
+        DataHolder.sharedInstance.registrarse(user: (txtEmail?.text)!, password: (txtPass?.text)!, delegate: self)
+
         
-        Auth.auth().createUser(withEmail: (txtUser?.text)!, password: (txtPass?.text)!) { (user, error) in
-            if user != nil{
-                print("TE REGISTRASTES")
-               self.performSegue(withIdentifier: "trregister", sender: self)
-                DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
-                    /*[
-                    "Nombre": self.txtUser?.text as Any,
-                    "Contraseña": self.txtPass?.text as Any,
-                    "Email": self.txtEmail?.text as Any,
-                    ])*/
-            }
-            else{
-                print(error!)
-            }
+    }
+    func DHDregistro(blFin: Bool) {
+        if blFin{
+            self.performSegue(withIdentifier: "trregister", sender: self)
         }
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

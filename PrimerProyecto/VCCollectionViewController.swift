@@ -8,33 +8,14 @@
 
 import UIKit
 
-class VCCollectionViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
+class VCCollectionViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,DataHolderDelegate {
     
-    
-      var arUsuarios:[Perfil] = []
     
     @IBOutlet var colPrincipal:UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").addSnapshotListener { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                self.arUsuarios=[]
-                for document in querySnapshot!.documents {
-                    let nombre:Perfil = Perfil()
-                    nombre.setMap(valores: document.data())
-                    self.arUsuarios.append(nombre)
-                    
-                    //print("\(document.documentID) => \(document.data())")
-                }
-                //print("---->>>>> ",self.arUsuarios.count)
-                //self.tbtablaCampeones?.reloadData()
-                self.refreshUI()
-            }
-            
-        }
+        DataHolder.sharedInstance.descargarPerfiles(delegate:self)
         // Do any additional setup after loading the view.
     }
 
@@ -42,14 +23,24 @@ class VCCollectionViewController: UIViewController, UICollectionViewDelegate,UIC
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func DHDDescargaPerfilesCompleta(blFin: Bool) {
+        if blFin {
+            self.refreshUI()
+        }
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.arUsuarios.count
+        return DataHolder.sharedInstance.arUsuarios.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celda = collectionView.dequeueReusableCell(withReuseIdentifier: "idmicelda2", for: indexPath) as! MiCelda2
-        celda.lblNombre?.text = self.arUsuarios[indexPath.row].sNombre
-        celda.mostrarImagen(uri: self.arUsuarios[indexPath.row].sUrlImage!)
+        celda.lblNombre?.text = DataHolder.sharedInstance.arUsuarios[indexPath.row].sNombre
+        if (DataHolder.sharedInstance.arUsuarios[indexPath.row].sUrlImage != nil){
+            celda.mostrarImagen(uri: DataHolder.sharedInstance.arUsuarios[indexPath.row].sUrlImage!)
+        }
         //celda.imgvMain?.image = self.arUsuarios[indexPath.row].
         
         /*

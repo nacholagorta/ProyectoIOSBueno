@@ -18,13 +18,44 @@ class DataHolder: NSObject {
     var firStorage:Storage?
     var miPerfil:Perfil = Perfil()
     var arUsuarios:[Perfil] = []
-
+    
     
     func initFireBase() {
         FirebaseApp.configure()
         fireStoreDB = Firestore.firestore()
    firStorage = Storage.storage()
 }
+   
+    
+    func confirmarLogin(user:String, password:String, delegate:DataHolderDelegate){
+        Auth.auth().signIn(withEmail: (user), password: (password)) {(user, error) in
+            if(user != nil){
+                let ruta =
+                    DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!)
+                ruta?.getDocument { (document, error) in
+                    if document != nil{
+                        DataHolder.sharedInstance.miPerfil.setMap(valores: (document?.data())!)
+                        delegate.DHDDescargaLoginCompleta!(blFin: true)
+                        print(document?.data() as Any)
+                        
+                    }
+                    else{
+                        print(error!)
+                    }
+                }
+                
+                
+            }
+            else {
+                print("NO SE HA LOGEADO")
+                print(error!)
+            }
+            //self.performSegue(withIdentifier: "trlogin", sender: self)
+            
+            
+        }
+        
+    }
     func descargarPerfiles(delegate:DataHolderDelegate){
         
         fireStoreDB?.collection("Perfiles").addSnapshotListener { (querySnapshot, err) in
@@ -32,6 +63,7 @@ class DataHolder: NSObject {
                 print("Error getting documents: \(err)")
                 delegate.DHDDescargaPerfilesCompleta!(blFin: false)
             } else {
+            
                 self.arUsuarios=[]
                 for document in querySnapshot!.documents {
                     let nombre:Perfil = Perfil()
@@ -50,17 +82,37 @@ class DataHolder: NSObject {
         
     }
     
+    func registrarse(user: String, password:String, delegate: DataHolderDelegate){
+        
+        
+        
+        Auth.auth().createUser(withEmail:user, password:password){ (user, error) in
+            
+            if(user != nil){
+                print("registrado")
+                DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
+                 delegate.DHDregistro!(blFin: true)
+            }
+            else{
+                print(error!)
+            }
+        print("Wolas")
+        
+    }
  }
 
-
-
-@objc protocol DataHolderDelegate {
-    @objc optional func  DHDDescargaPerfilesCompleta(blFin:Bool)
 }
 
+@objc protocol DataHolderDelegate {
+    @objc optional func DHDDescargaPerfilesCompleta(blFin:Bool)
+    @objc optional func DHDDescargaLoginCompleta(blFin:Bool)
+    @objc optional func DHDregistro(blFin:Bool)
 
 
 
 
 
 
+
+
+}
