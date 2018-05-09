@@ -41,25 +41,6 @@ class VCCollectionViewController: UIViewController, UICollectionViewDelegate,UIC
         if (DataHolder.sharedInstance.arUsuarios[indexPath.row].sUrlImage != nil){
             celda.mostrarImagen(uri: DataHolder.sharedInstance.arUsuarios[indexPath.row].sUrlImage!)
         }
-        //celda.imgvMain?.image = self.arUsuarios[indexPath.row].
-        
-        /*
-        if indexPath.row == 0 {
-            celda.lblNombre?.text="LeeSin"
-        }
-        else if indexPath.row == 1 {
-            celda.lblNombre?.text="Yasuo"
-        }
-        else if indexPath.row == 2{
-            celda.lblNombre?.text="Riven"
-        }
-        else if indexPath.row == 3 {
-            celda.lblNombre?.text="Kayn"
-        }
-        else if indexPath.row == 4 {
-            celda.lblNombre?.text="Brand"
-        }
-        */
         return celda
     }
     
@@ -69,14 +50,4 @@ class VCCollectionViewController: UIViewController, UICollectionViewDelegate,UIC
             self.colPrincipal?.reloadData()
         })
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
