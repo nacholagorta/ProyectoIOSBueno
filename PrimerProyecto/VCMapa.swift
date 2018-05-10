@@ -18,12 +18,11 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         DataHolder.sharedInstance.descargarPerfiles(delegate: self)
-        
         for Perfil in DataHolder.sharedInstance.arUsuarios {
             if Perfil.iLatitude != nil {
                 self.agregarPin(titulo: Perfil.sNombre!, latitude: Perfil.iLatitude!, longitude: Perfil.iLongitude!)
             }
-        }
+        
         
         //self.agregarPin(titulo: "HOLA", latitude: 42, longitude: -3)
         locationManager = CLLocationManager()
@@ -33,7 +32,7 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate {
         miMapa?.showsUserLocation = true
         // Do any additional setup after loading the view.
     }
-    
+    }
     func DHDDescargaPerfilesCompleta(blFin: Bool) {
         if blFin {
             self.agregarPines()
@@ -80,5 +79,6 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }

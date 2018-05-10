@@ -19,7 +19,7 @@ class DataHolder: NSObject {
     var miPerfil:Perfil = Perfil()
     var arUsuarios:[Perfil] = []
     var imagenDescargada:[String:UIImage]? = [:]
-    
+  
     func initFireBase() {
         FirebaseApp.configure()
         fireStoreDB = Firestore.firestore()
@@ -74,7 +74,7 @@ class DataHolder: NSObject {
                 //self.tbtablaCampeones?.reloadData()
                // self.refreshUI()
             }
-        }
+        }                                                                                                                                     
     }
     
     func registrarse(user: String, password:String, delegate: DataHolderDelegate){
@@ -110,9 +110,7 @@ class DataHolder: NSObject {
         }
     }
     
-    func getMap(delegate:DataHolderDelegate){
-       
-    }
+    
     
 }
 @objc protocol DataHolderDelegate {
@@ -120,6 +118,6 @@ class DataHolder: NSObject {
     @objc optional func DHDDescargaLoginCompleta(blFin:Bool)
     @objc optional func DHDregistro(blFin:Bool)
     @objc optional func DHDDescargaImg(imagen:UIImage)
-    @objc optional func DHDDescargaMap()
+   
 }
 
