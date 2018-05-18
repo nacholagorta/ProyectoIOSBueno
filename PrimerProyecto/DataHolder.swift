@@ -19,11 +19,13 @@ class DataHolder: NSObject {
     var miPerfil:Perfil = Perfil()
     var arUsuarios:[Perfil] = []
     var imagenDescargada:[String:UIImage]? = [:]
-  
+    var firStorageRef:StorageReference?
+    
     func initFireBase() {
-        FirebaseApp.configure()
+       FirebaseApp.configure()
         fireStoreDB = Firestore.firestore()
-   firStorage = Storage.storage()
+        firStorage = Storage.storage()
+        firStorageRef = firStorage?.reference()
 }
    
     

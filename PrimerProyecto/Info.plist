@@ -42,6 +42,8 @@
 	<string>lmao xdlol roflmao</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>lmao xdlol roflmao</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>QUIERO ACCEDER A LA GALERIA</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -27,6 +27,7 @@
 		DDA3AF58207398830095FB55 /* PrimerProyectoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3AF57207398830095FB55 /* PrimerProyectoTests.swift */; };
 		DDA3AF63207398830095FB55 /* PrimerProyectoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3AF62207398830095FB55 /* PrimerProyectoUITests.swift */; };
 		DDA3AF712073ACDA0095FB55 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3AF702073ACDA0095FB55 /* VCRegister.swift */; };
+		DDD373E620AED8FB004DFA62 /* VCSelectImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD373E520AED8FB004DFA62 /* VCSelectImg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +179,7 @@
 		DDA3AF62207398830095FB55 /* PrimerProyectoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimerProyectoUITests.swift; sourceTree = "<group>"; };
 		DDA3AF64207398830095FB55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDA3AF702073ACDA0095FB55 /* VCRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
+		DDD373E520AED8FB004DFA62 /* VCSelectImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCSelectImg.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 				DD00D229207F892E0044F54C /* Perfil.swift */,
 				DD2780B02088957B001B7A9D /* VCMapa.swift */,
 				DD605E6C2088B531005D24CD /* City.swift */,
+				DDD373E520AED8FB004DFA62 /* VCSelectImg.swift */,
 			);
 			path = PrimerProyecto;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				TargetAttributes = {
 					DDA3AF3E207398830095FB55 = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 					DDA3AF52207398830095FB55 = {
@@ -745,6 +749,7 @@
 				DD605E6D2088B531005D24CD /* City.swift in Sources */,
 				DDA3AF43207398830095FB55 /* AppDelegate.swift in Sources */,
 				DD0479A020764088005F3168 /* MiCelda1.swift in Sources */,
+				DDD373E620AED8FB004DFA62 /* VCSelectImg.swift in Sources */,
 				DD85773A207523B500F72713 /* VCPrincipal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -916,12 +921,14 @@
 			baseConfigurationReference = 68C1443A5F9738FCBB0067F1 /* Pods-PrimerProyecto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X38738S689;
 				INFOPLIST_FILE = PrimerProyecto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nacho.PrimerProyecto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -932,6 +939,7 @@
 			baseConfigurationReference = 9D6146126A39B51F5E827E26 /* Pods-PrimerProyecto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X38738S689;
 				INFOPLIST_FILE = PrimerProyecto/Info.plist;

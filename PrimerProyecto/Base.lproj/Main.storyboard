@@ -90,10 +90,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-Hi-N3d">
-                                <rect key="frame" x="16" y="387" width="343" height="260"/>
+                                <rect key="frame" x="16" y="387" width="338" height="260"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JY-zS-qJa">
-                                        <rect key="frame" x="268" y="135" width="61" height="30"/>
+                                        <rect key="frame" x="263" y="135" width="61" height="30"/>
                                         <state key="normal" title="Cancelar">
                                             <color key="titleColor" red="1" green="0.99905087879999999" blue="0.055455748290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -119,10 +119,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZw-EU-gNL">
-                                <rect key="frame" x="16" y="20" width="343" height="431"/>
+                                <rect key="frame" x="16" y="20" width="338" height="431"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxk-gX-j1j">
-                                        <rect key="frame" x="90" y="190" width="164" height="30"/>
+                                        <rect key="frame" x="90" y="190" width="159" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FS6-WZ-8iq"/>
                                         </constraints>
@@ -149,7 +149,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se9-c7-Kuq">
-                                        <rect key="frame" x="139.5" y="145" width="64" height="21"/>
+                                        <rect key="frame" x="137" y="145" width="64" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="l2n-5z-Q1Z"/>
                                         </constraints>
@@ -292,6 +292,55 @@
             </objects>
             <point key="canvasLocation" x="3508" y="455.62218890554726"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="JJy-7H-921">
+            <objects>
+                <viewController id="N8k-oC-qz6" customClass="VCSelectImg" customModule="PrimerProyecto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e7V-jo-OhA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nmn-en-WAu">
+                                <rect key="frame" x="0.0" y="20" width="375" height="386"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgX-IT-6kO">
+                                <rect key="frame" x="207" y="414" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SELECCIONAR CAMARA"/>
+                                <connections>
+                                    <action selector="accionBotonCamara" destination="N8k-oC-qz6" eventType="touchUpInside" id="CYX-Cg-FVp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AP9-34-w2P">
+                                <rect key="frame" x="122" y="495" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SUBIR A FIREBASE"/>
+                                <connections>
+                                    <action selector="accionBotonSubir" destination="N8k-oC-qz6" eventType="touchUpInside" id="Y2m-7T-Dzk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omC-6Z-b4o">
+                                <rect key="frame" x="0.0" y="414" width="167" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SELECCIONAR GALERIA"/>
+                                <connections>
+                                    <action selector="accionBotonGaleria" destination="N8k-oC-qz6" eventType="touchUpInside" id="ARp-lp-eg4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="o7G-0D-6X1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="esW-xL-3Mw"/>
+                    <connections>
+                        <outlet property="imgView" destination="Nmn-en-WAu" id="VVa-Pr-fRU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16W-l1-vjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676" y="1390.2548725637182"/>
+        </scene>
         <!--Mapa-->
         <scene sceneID="tFP-F5-Se5">
             <objects>
@@ -395,6 +444,7 @@
                         <segue destination="CbL-dA-vE0" kind="relationship" relationship="viewControllers" id="ZNL-1Y-Rm6"/>
                         <segue destination="due-L2-hgO" kind="relationship" relationship="viewControllers" id="20l-t5-ehh"/>
                         <segue destination="6tb-vh-bU9" kind="relationship" relationship="viewControllers" id="O66-zq-o0C"/>
+                        <segue destination="N8k-oC-qz6" kind="relationship" relationship="viewControllers" id="Pvc-Xu-kmn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jr0-0U-ior" userLabel="First Responder" sceneMemberID="firstResponder"/>
